@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projection Mapping Controller</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="background"></div>
+
+
+<!-- =========================================
+     ① EFFECT SELECT
+========================================= -->
+
+<section id="page-select" class="page active">
+
+    <h1>EFFECT SELECT</h1>
+
+    <div class="effect-grid">
+
+        <button class="effect" data-effect="heart">
+            <span class="effect-icon">💕</span>
+            <span class="effect-name">HEART</span>
+        </button>
+
+        <button class="effect" data-effect="star">
+            <span class="effect-icon">⭐</span>
+            <span class="effect-name">STAR</span>
+        </button>
+
+        <button class="effect" data-effect="water">
+            <span class="effect-icon">💧</span>
+            <span class="effect-name">WATER</span>
+        </button>
+
+        <button class="effect" data-effect="sparkle">
+            <span class="effect-icon">✨</span>
+            <span class="effect-name">SPARKLE</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ② EFFECT SETTINGS
+========================================= -->
+
+<section id="page-settings" class="page">
+
+    <h1 id="selectedEffectName">
+        EFFECT SETTINGS
+    </h1>
+
+
+    <!-- COLOR -->
+
+    <h2>COLOR</h2>
+
+    <div class="color-row">
+
+        <button
+            class="color pink selected"
+            data-color="Pink">
+        </button>
+
+        <button
+            class="color blue"
+            data-color="Blue">
+        </button>
+
+        <button
+            class="color yellow"
+            data-color="Yellow">
+        </button>
+
+        <button
+            class="color green"
+            data-color="Green">
+        </button>
+
+    </div>
+
+
+    <!-- SIZE -->
+
+    <h2>SIZE</h2>
+
+    <div class="slider-area">
+
+        <input
+            type="range"
+            id="size"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1">
+
+        <span id="sizeValue">×1</span>
+
+    </div>
+
+
+    <!-- SPEED -->
+
+    <h2>SPEED</h2>
+
+    <div class="slider-area">
+
+        <input
+            type="range"
+            id="speed"
+            min="0.5"
+            max="3"
+            step="0.5"
+            value="1">
+
+        <span id="speedValue">×1</span>
+
+    </div>
+
+
+    <!-- GO -->
+
+    <button id="goButton">
+        GO
+    </button>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
