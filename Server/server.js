@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
@@ -14,8 +15,25 @@ app.use(express.json());
 app.use(cors());
 
 
+// Webフォルダを公開
+app.use(express.static(path.join(__dirname, "../Web")));
+
+
 // 現在のエフェクト
 let currentEffect = null;
+
+
+// ================================================
+// Webページ
+// ================================================
+
+app.get("/", (req, res) => {
+
+    res.sendFile(
+        path.join(__dirname, "../Web/index.html")
+    );
+
+});
 
 
 // ================================================
@@ -26,12 +44,10 @@ app.post("/effect", (req, res) => {
 
     const data = req.body;
 
-
     console.log(
         "受信:",
         data
     );
-
 
     currentEffect = {
 
@@ -44,7 +60,6 @@ app.post("/effect", (req, res) => {
         speed: data.speed
 
     };
-
 
     res.json({
         success: true
@@ -71,13 +86,10 @@ app.get("/effect", (req, res) => {
         return;
     }
 
-
     const data = currentEffect;
-
 
     // 送信したのでリセット
     currentEffect = null;
-
 
     res.json(data);
 
