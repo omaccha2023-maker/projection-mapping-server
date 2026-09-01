@@ -8,7 +8,7 @@
 // =================================================
 
 const SERVER_URL =
-    "https://〇〇〇.onrender.com/effect";
+    "https://projection-mapping-server.onrender.com/effect";
 
 
 // =================================================
